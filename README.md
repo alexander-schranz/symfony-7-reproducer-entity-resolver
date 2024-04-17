@@ -1,5 +1,14 @@
 # Reproducer Symfony 7 cache clear issue
 
+## Fix
+
+The issue seems changes of `doctrine.event_subscriber` to `doctrine.event_listener` and so the `doctrine.orm.listeners.resolve_target_entity`
+was not correctly registered.
+
+See also: [https://github.com/sulu/sulu/pull/7371](https://github.com/sulu/sulu/pull/7371)
+
+## Reproducer
+
 Dependencies:
 
 ```bash
